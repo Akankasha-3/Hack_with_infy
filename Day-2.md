@@ -186,12 +186,13 @@ while j < len(l):
     if l[j] == 0:
         z += 1
        
-    while z>k:
+    while z>a:
         
    
         if l[i] == 0:
             z -= 1
          j+=1
     o = max(o, j - i+1)
+    i=i+1
 print(o)
 ```
