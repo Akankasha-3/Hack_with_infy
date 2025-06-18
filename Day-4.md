@@ -54,7 +54,7 @@ for i in range(b):
 
 ---
 
-### 2) Max Element Within the Range  Segment Tree
+### 2) Max Element Within the Range  
 
 ```python
 a, b = map(int, input().split())
