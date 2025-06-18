@@ -191,8 +191,8 @@ while j < len(l):
    
         if l[i] == 0:
             z -= 1
-         j+=1
+         i+=1
     o = max(o, j - i+1)
-    i=i+1
+    j+=1
 print(o)
 ```
