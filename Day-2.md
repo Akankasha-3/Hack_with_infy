@@ -182,15 +182,16 @@ a = int(input())
 z, o = 0, 0
 i, j = 0, 0
 while j < len(l):
-    if z <= a:
-        if l[j] == 0:
-            z += 1
-        j += 1
-    else:
-        i += 1
-        j += 1
+    
+    if l[j] == 0:
+        z += 1
+       
+    while z>k:
+        
+   
         if l[i] == 0:
-            z -= 0
-    o = max(o, j - i)
+            z -= 1
+         j+=1
+    o = max(o, j - i+1)
 print(o)
 ```
