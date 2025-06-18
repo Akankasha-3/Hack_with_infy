@@ -54,7 +54,7 @@ for i in range(b):
 
 ---
 
-### 2) Max Element Within the Range Using Prefix + Segment Tree
+### 2) Max Element Within the Range  Segment Tree
 
 ```python
 a, b = map(int, input().split())
@@ -115,7 +115,8 @@ print(s)
 
 ---
 
-### 3) Optimized Max Element Query
+### 3) Optimized Max Element Query using Segment Tree
+
 
 ```python
 def build_tree(l, r, ind):
