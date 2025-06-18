@@ -76,7 +76,7 @@ l = list(map(int, input().split()))
 k = int(input())
 c = 0
 for i in range(k):
-    if l[i] & 1 == 0:
+    if l[i] & 1 == 1:
         c += 1
 q = c
 for i in range(1, len(l) - k + 1):
