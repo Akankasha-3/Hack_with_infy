@@ -147,6 +147,25 @@ else:
                 h -= 1
                 j -= 1
 ```
+Optimal
+```pyhon
+l = list(map(int, input().split()))
+k = int(input())
+
+i = 0
+s = 0
+max_len = 0
+
+for j in range(len(l)):
+    s += l[j]
+    while s > k and i <= j:
+        s -= l[i]
+        i += 1
+    max_len = max(max_len, j - i + 1)
+
+print(max_len)
+
+```
 
 7) Length of longest substring with non-repeating characters
 
