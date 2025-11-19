@@ -170,24 +170,25 @@ print(max_len)
 7) Length of longest substring with non-repeating characters
 
 ```python
-s = input()
-m = 1
-st = {s[0]: 0}
-i, j = 0, 1
-while i < j and j < len(s):
-    if s[j] not in st:
-        st[s[j]] = j
-        m = max(m, j - i)
-        j += 1
+s=input()
+d={s[0]:0}
+m=0
+i,j=0,1
+while(j<len(s)):
+    if s[j] not in d:
+        m=max(m,j-i+1)
+        d[s[j]]=j 
+        j+=1
     else:
-        if st[s[j]] < i:
-            st[s[j]] = j
+        if d[s[j]]<i:
+            d[s[j]]=j
+            m=max(m,j-i+1)
+            j+=1
         else:
-            i = st[s[j]] + 1
-            st[s[j]] = j
-        m = max(m, j - i)
-        j += 1
-print(m + 1)
+            m=max(m,j-i)
+            i=d[s[j]]+1
+            j+=1
+print(m,len(s))
 
 # Input: abcdaefckjibes -> Output: 9
 # Input: abcdefgabn     -> Output: 8
