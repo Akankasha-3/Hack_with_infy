@@ -155,6 +155,26 @@ print(s)
 ```
 
 ---
+length of longest increasing sequence
+```python
+l=list(map(int,input().split()))
+a=[1]*len(l)
+for i in range(1,len(l)):
+    for j in range(i):
+        if l[i]>l[j]:
+            a[i]=max(a[i],a[j]+1)
+print(max(a))
+```
+max sum of increasing sequence
+```python
+l=list(map(int,input().split()))
+a=l[:]
+for i in range(1,len(l)):
+    for j in range(i):
+        if l[i]>l[j]:
+            a[i]=max(a[i],a[j]+l[i])
+print(max(a))
+```
 
 ## 4) Length of Longest Common Substring
 
