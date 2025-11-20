@@ -5,40 +5,27 @@
 ## 🔤 Word Search in Grid (Non-Diagonal Only)
 
 ```python
-def call(i, j, idx):
-    if idx == len(k):
-        return True
-    if i < 0 or j < 0 or i >= n or j >= m or l[i][j] != k[idx]:
-        return False
+def can(i,j,p):
+    if p==len(s):return 1 
+    if i>=m or j>=n or i<0 or j<0 or l[i][j]!=s[p]:
+        return 0 
+    t=l[i][j]
+    l[i][j]='2'
+    y=can(i+1,j,p+1) or can(i,j+1,p+1) or can(i-1,j,p+1) or can(i,j-1,p+1)
+    l[i][j]=t
+    return y
 
-    temp = l[i][j]
-    l[i][j] = '#'
-    found = (
-        call(i, j + 1, idx + 1) or
-        call(i, j - 1, idx + 1) or
-        call(i + 1, j, idx + 1) or
-        call(i - 1, j, idx + 1)
-    )
-    l[i][j] = temp
-    return found
-
-l = [
-    ['A', 'S', 'E', 'T'],
-    ['K', 'E', 'T', 'S'],
-    ['O', 'E', 'S', 'O'],
-    ['P', 'O', 'S', 'T']
-]
-n = len(l)
-m = len(l[0])
-k = "SEEK"
-found = False
-
-for i in range(n):
-    for j in range(m):
-        if call(i, j, 0):
-            found = True
-            break
-print("YES" if found else "NO")
+m,n=list(map(int,input().split()))
+l=[list(map(str,input().split())) for _ in range(m)]
+s=input()
+print(l)
+f=0
+for i in range(m):
+    for j in range(n):
+        if l[i][j]==s[0]:
+            f=can(i,j,0)
+            if f :break
+print(f)
 ```
 
 ---
