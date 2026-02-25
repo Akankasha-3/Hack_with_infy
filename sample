@@ -1,0 +1,13 @@
+```python
+import sys
+class node():
+    def __init__(self,val):
+        self.val=val
+        self.next=None 
+if __name__=="__main__":
+    print('a')
+    c=list(sys.stdin.readline().split())
+    d=int(sys.stdin.readline())
+    b=node(3)
+    print(b.val,c,d)
+      ```
