@@ -5,7 +5,7 @@ n=int(input())
 k=(1<< int(math.log2(n))+1)-1
 print(n^k)
 ```
-**Ps:given the starting day of the month and days d.return no.of sundays will occur in these days **
+**ps:given the starting day of the month and days d.return no.of sundays will occur in these days**
 ```
 def main():
     s = input()
@@ -201,7 +201,8 @@ l=list(map(int,input().split()))
 d=int(input())
 f=int(input())
 k=0
-```
+
 for i in l:
     if i&1!=d&1:k+=1 
 print(k*f)
+```
