@@ -227,3 +227,22 @@ while(j<len(s)):
     m=max(m,j-i)
 print(m)
 ```
+**ps: merge overlapping intervals**
+```python
+n=int(input())
+l=[list(map(int,input().split())) for i in range(n)]
+
+l.sort(key=lambda x:x[0])
+a,b=l[0][0],l[0][1] 
+k=[]
+for i in range(1,len(l)):
+    if a<=l[i][0]<=b or l[i][1]<=b:
+        a=min(a,l[i][0])
+        b=max(b,l[i][1])
+        
+    else:
+        k.append([a,b])
+        a,b=l[i][0],l[i][1]
+k.append([a,b])
+print(k)
+```
