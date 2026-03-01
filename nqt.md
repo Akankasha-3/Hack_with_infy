@@ -246,3 +246,20 @@ for i in range(1,len(l)):
 k.append([a,b])
 print(k)
 ```
+**ps:Return the maximum length of subarray in which count of 0's and 1's are equal**
+```python
+l=list(map(int,input().split()))
+b=[-1 if i==0 else 1 for i in l]
+d={0:-1}
+k=0
+m=0
+print(b)
+for i in range(len(l)):
+    k+=b[i] 
+    if k in d:
+        m=max(m,i-d[k])
+    else:d[k]=i
+print(m)
+```    
+    
+**brute force:checking the subarrays**
