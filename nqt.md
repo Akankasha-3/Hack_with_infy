@@ -281,3 +281,18 @@ for i in range(len(s)):
 k+=v 
 print(k)
 ```
+or 
+```python
+s=input()
+v=''
+for i in range(len(s)):
+    if i==0:
+        v+=s[i].lower()
+    elif 'A'<=s[i]<='Z':
+        
+        v+=' '+s[i].lower()
+    else:
+        v+=s[i]
+
+print(v)
+```
