@@ -263,3 +263,21 @@ print(m)
 ```    
     
 **brute force:checking the subarrays**
+
+
+**ps: input: 'ADayInMyLife' output: 'a day in my life'**
+```python
+s=input()
+k=''
+v=''
+for i in range(len(s)):
+    if i==0:
+        v+=s[i].lower()
+    elif 'A'<=s[i]<='Z':
+        k+=v+' '
+        v=s[i].lower()
+    else:
+        v+=s[i]
+k+=v 
+print(k)
+```
