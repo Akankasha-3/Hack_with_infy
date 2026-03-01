@@ -206,3 +206,24 @@ for i in l:
     if i&1!=d&1:k+=1 
 print(k*f)
 ```
+**ps:max length of substring wihout any repeating characters**
+```python
+s=input()
+d={}
+m=0
+i=0
+j=0
+while(j<len(s)):
+    if s[j] not in d:
+        d[s[j]]=j 
+        j+=1
+    else:
+        if d[s[j]]<i:
+            d[s[j]]=j 
+            j+=1
+        else:
+            m=max(m,j-i)
+            i=d[s[j]]+1 
+    m=max(m,j-i)
+print(m)
+```
