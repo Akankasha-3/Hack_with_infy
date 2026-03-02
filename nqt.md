@@ -296,3 +296,38 @@ for i in range(len(s)):
 
 print(v)
 ```
+**Trapping rain water**
+ps:Given an array arr[] with non-negative integers representing the height of blocks. If the width of each block is 1, compute how much water can be trapped between the blocks during the rainy season. 
+
+Examples:
+
+Input: arr[] = [3, 0, 1, 0, 4, 0 2]
+Output: 10
+Explanation: Total water trapped = 0 + 3 + 2 + 3 + 0 + 2 + 0 = 10 units. 
+```python
+
+class Solution:
+    def maxWater(self, arr):
+        n = len(arr)
+        if n <= 2:
+            return 0 
+        l, r = 0, n - 1  
+        lm, rm = 0, 0  
+        water = 0  
+
+        while l < r:
+            if arr[l] <=arr[r]:
+                if arr[l] >= lm:
+                    lm = arr[l] 
+                else:
+                    water += lm -arr[l] 
+                l += 1
+            else:
+                if arr[r] >= rm:
+                    rm = arr[r]  
+                else:
+                    water += rm -arr[r]  
+                r -= 1
+        
+        return water
+```
