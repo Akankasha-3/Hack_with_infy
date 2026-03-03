@@ -331,3 +331,67 @@ class Solution:
         
         return water
 ```
+**ps:given 3 numbers in one operation you can increase two numbers by 1 and decrease the other by 1.your task is to find the min operations required for making all three numbers as equal if not possible print -1**
+``` python
+def sol(a,b,c):
+    if a<mi or b<mi or c<mi:return 1e9
+    if a>ma or b>ma or c>ma:return 1e9
+    if a==b and b==c :return 0
+    # print(a,b,c)
+    # print(1+min(sol(a+1,b+1,c-1),sol(a+1,b-1,c+1),sol(a-1,b+1,c+1)))
+    return 1+min(sol(a+1,b+1,c-1),sol(a+1,b-1,c+1),sol(a-1,b+1,c+1))
+    
+    
+    
+x,y,z=map(int,input().split())
+mi,ma=min(x,y,z),max(x,y,z)
+# print(mi,ma)
+print(sol(x,y,z) if sol(x,y,z)<1e9 else -1)
+```
+**ps:print the min element in each subarray of length k**
+```python
+l=list(map(int,input().split()))
+k=int(input())
+if k==1:return *l
+from collections import deque
+d=deque()
+for i in range(len(l)):
+    if not d:
+        d.append(l[i])
+    else:
+        if l[i]<d[-1]:
+            d[-1]=l[i]
+        else:
+            d.append(l[i])
+    if (i+1)>=k:
+        print(d[0])
+    if len(d)==k:d.popleft()
+    # print(d)
+```
+
+**brute force:**
+```python
+l=list(map(int,input().split()))
+k=int(input())
+for i in range(len(l)-k+1):
+    m=l[i]
+    for j in range(i,i+k):
+        m=min(m,l[j])
+    print(m)
+```
+**ps:find min and max length of subarray whose sum of elements equals to k** 
+```python
+
+l=list(map(int,input().split()))
+k=int(input())
+d={0:-1}
+s=0
+ma,mi=0,1e9
+for i in range(len(l)):
+    s+=l[i]
+    if s-k in d:
+        ma=max(i-d[s-k],ma)
+        mi=min(i-d[s-k],mi)
+    elif s not in d:d[s]=i
+print(ma,mi)
+```
