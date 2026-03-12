@@ -395,3 +395,23 @@ for i in range(len(l)):
     elif s not in d:d[s]=i
 print(ma,mi)
 ```
+**print missing range of elements**
+```python
+l,r,n=map(int,input().split())
+arr=list(map(int,input().split()))
+arr.sort()
+a=[]
+for i in arr:
+    if i>l:
+        a.append([l,i-1])
+    l=i+1
+    
+if arr[-1]<r:
+    a.append([arr[-1]+1,r])
+print(a)
+```
+input:
+l=3,r=10 ,n=2
+5 6 8 10
+output:
+[[3, 4], [7, 7], [9, 9]]
