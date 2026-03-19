@@ -68,7 +68,7 @@ for i in range(1, k + 1):
     print(dp)
 print(dp[-1] if dp[-1] != float('inf') else -1)
 ```
-**Approac -2 :2D**
+**Approach-2 :2D**
 ```python
 l=list(map(int,input().split()))
 k=int(input())
