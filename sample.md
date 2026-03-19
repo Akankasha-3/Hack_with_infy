@@ -9,4 +9,6 @@ if __name__=="__main__":
     c=list(sys.stdin.readline().split())
     d=int(sys.stdin.readline())
     b=node(3)
+    n,m=map(int,sys.stdin.readline().split())
+    print(n+m)
     print(b.val,c,d)```
