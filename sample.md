@@ -10,5 +10,15 @@ if __name__=="__main__":
     d=int(sys.stdin.readline())
     b=node(3)
     n,m=map(int,sys.stdin.readline().split())
+    print(n,m)
     print(n+m)
-    print(b.val,c,d)```
+    print(b.val,c,d,end=' ')```
+**input:**
+4 5
+7
+7 7
+**output;**
+a
+7 7
+14
+3 ['4', '5'] 7
