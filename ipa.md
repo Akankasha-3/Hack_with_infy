@@ -160,17 +160,17 @@ class Solution{
 }
 ```
 Sample Input
-2
-1
-ak
-am
-270
-2
-az
-ao
-50
-Your Output
-2 az ao 50.0
+    2
+    1
+    ak
+    am
+    270
+    2
+    az
+    ao
+    50
+    Your Output
+    2 az ao 50.0
 1 ak am 270.0
 
 
