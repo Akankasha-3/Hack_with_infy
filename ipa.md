@@ -159,7 +159,7 @@ class Solution{
     }
 }
 ```
-Sample Input:
+Sample Input:(LINE BY LINE INPUT)
 2
 
 1
@@ -174,5 +174,19 @@ ao
 
 Your Output: 2 az ao 50.0
 1 ak am 270.0
+
+Input form is same line then:
+```
+      for (int i = 0; i < n; i++) {
+            // Read inputs directly even if they are given space-separated or line-by-line
+            int id = sc.nextInt();
+            String name = sc.next();
+            String author = sc.next();
+            double price = sc.nextDouble();
+            if(sc.hasNextLine()) sc.nextLine(); // Safe trailing cleanup
+            
+            books[i] = new Book(id, name, author, price);
+        }
+        ```
 
 
