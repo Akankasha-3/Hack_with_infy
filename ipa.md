@@ -98,3 +98,79 @@ class Solve{
     }
 }
 ```
+**sorting the objects based on price**
+```
+import java.util.*;
+
+class Book{
+    private int id;
+    private String name;
+    private String author;
+    private double price;
+    Book(int id,String name,String author,double price){
+        this.id=id;
+        this.name=name;
+        this.author=author;
+        this.price=price;
+    }
+    public int getId() { return id; }
+    public String getName() { return name; }
+    public String getAuthor() { return author; }
+    public double getPrice() { return price; }
+    
+    
+}
+class Solution{
+    public static void main(String [] args){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();sc.nextLine();
+        Book a[]=new Book[n];
+        for(int i=0;i<n;i++){
+            int id=sc.nextInt();sc.nextLine();
+            String name=sc.nextLine();
+            String author=sc.nextLine();
+            Double p=sc.nextDouble();
+            a[i]=new Book(id,name,author,p);
+            
+        }
+        Book[] sortedBooks = sortBookByPrice(a);
+        if (sortedBooks != null) {
+            for (Book b : sortedBooks) {
+                System.out.println(b.getId() + " " + b.getName() + " " + b.getAuthor() + " " + b.getPrice());
+            }
+        }
+        sc.close();
+   
+        
+    }
+     public static Book[] sortBookByPrice(Book[] books) {
+        if (books == null || books.length == 0) {
+            return null;
+        }
+
+        Arrays.sort(books, new Comparator<Book>() {
+            @Override
+            public int compare(Book b1, Book b2) {
+                return Double.compare(b1.getPrice(), b2.getPrice());
+            }
+        });
+
+        return books;
+    }
+}
+```
+Sample Input
+2
+1
+ak
+am
+270
+2
+az
+ao
+50
+Your Output
+2 az ao 50.0
+1 ak am 270.0
+
+
