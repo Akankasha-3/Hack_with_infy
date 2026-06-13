@@ -283,3 +283,216 @@ Sample Input
 4 4 2 6 6
 Your Output
 4
+
+count the footwera with given type and find the  second highest price of a footwera whose name is eaqual to given brand
+```
+import java.util.*;
+
+class Footwear {
+    private int id;
+    private String name;
+    private String type;
+    private double price;
+    
+    Footwear(int id, String name, String type, double price) {
+        this.id = id;
+        this.name = name;
+        this.type = type;
+        this.price = price;
+    }
+    
+    public int getId() { return id; }
+    public String getName() { return name; }
+    public String getType() { return type; }
+    public double getPrice() { return price; }
+}
+
+class sol {
+    public static void main(String ars[]) {
+        Scanner sc = new Scanner(System.in);
+        
+        // Fix 1: Hardcoded array to size 4 as requested by the specific question
+        Footwear[] foot = new Footwear[4];
+        for(int i = 0; i < 4; i++) {
+            int id = sc.nextInt(); sc.nextLine();
+            String name = sc.nextLine().trim();
+            String type = sc.nextLine();
+            double price = sc.nextDouble(); sc.nextLine();
+            foot[i] = new Footwear(id, name, type, price);
+        }
+        
+        String inputType = sc.nextLine();
+        String inputBrand = sc.nextLine();
+        
+        // Output 1
+        int count = getCountByType(foot, inputType);
+        System.out.println(count); // Print count directly (even if 0)
+        
+        // Output 2: Checked for full object return
+        Footwear resultObj = secondHighestByBrand(foot, inputBrand);
+        if(resultObj == null) {
+            System.out.println("No Footwear found");
+        } else {
+            // Print the ID of the matched footwear item as requested
+            System.out.println(resultObj.getId());
+        }
+    }
+    
+    public static int getCountByType(Footwear[] foot, String type) {
+        int c = 0;
+        for(Footwear i : foot) {
+            if(type.equalsIgnoreCase(i.getType())) {
+                c += 1;
+            }
+        }
+        return c;
+    }
+    
+    // Fix 2: Changed return type to Footwear object reference
+    public static Footwear secondHighestByBrand(Footwear[] foot, String brand) {
+        Footwear firstHighest = null;
+        Footwear secondHighest = null;
+        
+        for(Footwear item : foot) {
+            if(brand.equalsIgnoreCase(item.getName())) {
+                if(firstHighest == null || item.getPrice() > firstHighest.getPrice()) {
+                    secondHighest = firstHighest;
+                    firstHighest = item;
+                }
+                else if((secondHighest == null || item.getPrice() > secondHighest.getPrice()) 
+                        && item.getPrice() < firstHighest.getPrice()) {
+                    secondHighest = item;
+                }
+            }
+        }
+        return secondHighest; // Returns null if less than two items exist for that brand
+    }
+}
+```
+Sample Input
+1
+te
+ka
+2509
+2
+ab
+ka
+3902
+3
+ab 
+ja
+506.3
+6
+fj
+jk
+90.0
+ka
+ab
+Your Output
+2
+3
+```
+import java.util.*
+class Footwear{
+    private int id;
+    private String name;
+    private String type;
+    private double price;
+    Footwear(int id,String name,String type,double price){
+        this.id=id;
+        this.name=name;
+        this.type=type;
+        this.price=price;
+    }
+    public int getId(){
+        return id;
+    }
+    public String getName(){
+        return name;
+    }
+    public String getType(){
+        return type;
+        
+    }
+    public double getPrice(){
+        return price;
+    }
+}
+class sol{
+    public static void main(String ars[]){
+        Scanner sc=new Scanner(System.in);
+        // int n=sc.nextInt();sc.nextLine();
+        Footwear[] foot=new Footwear[4];
+        for(int i=0;i<4;i++){
+            int id=sc.nextInt();sc.nextLine();
+            String name=sc.nextLine().trim();
+            String type=sc.nextLine();
+            double price=sc.nextDouble();sc.nextLine();
+            foot[i]=new Footwear(id,name,type,price);
+        }
+        String a=sc.nextLine();
+        String b=sc.nextLine();
+        int c=getCountByType(foot,a);
+        if(c==0){
+            System.out.println("No matches found");
+        }
+        else{
+          
+            System.out.println(c);
+        }
+        double m=secondHighestByBrand(foot,b);
+        if(m==Integer.MIN_VALUE){
+            System.out.println("no second highest found");
+        }
+        else{
+            System.out.println(m);
+        }
+    }
+    public static int getCountByType(Footwear[] foot,String type){
+        int c=0;
+        for(Footwear i:foot){
+            if(type.equalsIgnoreCase(i.getType())){
+                c+=1;
+            }
+        }return c;
+    }
+    public static double secondHighestByBrand(Footwear[] foot,String brand){
+        double f=0,s=0;
+        for(Footwear i:foot){
+            if(brand.equalsIgnoreCase(i.getName())){
+                if(f<i.getPrice()){
+                    s=f;
+                    f=i.getPrice();
+                    }
+                else if(i.getPrice()<f && i.getPrice()>s){
+                    s=i.getPrice();
+                }
+            }
+        }return s;
+    }
+}
+
+```
+Sample Input
+1
+te
+ka
+2509
+2
+ab
+ka
+3902
+3
+ab 
+ja
+506.3
+6
+fj
+jk
+90.0
+ka
+ab
+Your Output
+2
+506.3
+
