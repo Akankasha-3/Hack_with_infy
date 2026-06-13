@@ -188,5 +188,30 @@ Input form is same line then:
             books[i] = new Book(id, name, author, price);
         }
         ```
+```
+import java.util.*;
+import java.lang.*;
+import java.io.*;
 
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		Scanner sc=new Scanner(System.in);// your code goes here
+		String a=sc.nextLine();
+		int x=0,b=0;
+		for(int i=0;i<a.length();i++){
+		     char ch = a.charAt(i); 
+		    
+		    if(Character.isUpperCase(ch)){
+		        x+=1;
+		    }
+		    else{
+		        b+=1;
+		    }
+		    
+		}System.out.println(x + " " + b);
+	}
+}
+```
 
