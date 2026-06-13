@@ -248,3 +248,38 @@ i have67
 Your Output
 Vowels: 3
 Consonants: 2
+```
+import java.util.*;
+//@nd largest unique value
+
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		Scanner sc=new Scanner(System.in);// your code goes here
+		int n=sc.nextInt();
+		int a[]=new int[n];
+		for(int i=0;i<n;i++){
+		    a[i]=sc.nextInt();
+		}
+		int x = Integer.MIN_VALUE; // Tracks highest
+		int y = Integer.MIN_VALUE;
+		for(int i=0;i<n;i++){
+		    if(x<a[i]){
+		        y=x;
+		        x=a[i];
+		        
+		    }
+		    else if(x>a[i] && a[i]>y){
+		        y=a[i];
+		    }
+		}System.out.println(y);
+// 		Arrays.sort(a);
+// 		System.out.println(a[a.length-2]);
+	}
+}
+```
+Sample Input
+4 4 2 6 6
+Your Output
+4
