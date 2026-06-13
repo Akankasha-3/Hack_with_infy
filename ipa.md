@@ -214,4 +214,37 @@ class Codechef
 	}
 }
 ```
+```
+import java.util.*;
+import java.lang.*;
+import java.io.*;
 
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		Scanner sc=new Scanner(System.in);// your code goes here
+		String a=sc.nextLine();
+		int x=0,b=0;
+		for(int i=0;i<a.length();i++){
+		     char ch = a.charAt(i); 
+		    
+		    if (Character.isLetter(ch)){
+		        if(ch=='a'||ch=='e'||ch=='i'||ch=='o'|| ch=='u'||ch=='A'||ch=='E'||ch=='I'||ch=='O'||ch=='U'){
+		        x+=1;
+		    
+		    
+		    }
+		    else{
+		        b+=1;
+		    }}
+		    
+		}System.out.println("Vowels: "+ x + "\n" +"Consonants: " +b);
+	}
+}
+```
+Sample Input
+i have67
+Your Output
+Vowels: 3
+Consonants: 2
