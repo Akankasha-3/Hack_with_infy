@@ -189,59 +189,59 @@ Input form is same line then:
         }
         ```
 ```
-import java.util.*;
-import java.lang.*;
-import java.io.*;
-
-class Codechef
-{
-	public static void main (String[] args) throws java.lang.Exception
+	import java.util.*;
+	import java.lang.*;
+	import java.io.*;
+	
+	class Codechef
 	{
-		Scanner sc=new Scanner(System.in);// your code goes here
-		String a=sc.nextLine();
-		int x=0,b=0;
-		for(int i=0;i<a.length();i++){
-		     char ch = a.charAt(i); 
-		    
-		    if(Character.isUpperCase(ch)){
-		        x+=1;
-		    }
-		    else{
-		        b+=1;
-		    }
-		    
-		}System.out.println(x + " " + b);
+		public static void main (String[] args) throws java.lang.Exception
+		{
+			Scanner sc=new Scanner(System.in);// your code goes here
+			String a=sc.nextLine();
+			int x=0,b=0;
+			for(int i=0;i<a.length();i++){
+			     char ch = a.charAt(i); 
+			    
+			    if(Character.isUpperCase(ch)){
+			        x+=1;
+			    }
+			    else{
+			        b+=1;
+			    }
+			    
+			}System.out.println(x + " " + b);
+		}
 	}
-}
 ```
 ```
-import java.util.*;
-import java.lang.*;
-import java.io.*;
-
-class Codechef
-{
-	public static void main (String[] args) throws java.lang.Exception
+	import java.util.*;
+	import java.lang.*;
+	import java.io.*;
+	
+	class Codechef
 	{
-		Scanner sc=new Scanner(System.in);// your code goes here
-		String a=sc.nextLine();
-		int x=0,b=0;
-		for(int i=0;i<a.length();i++){
-		     char ch = a.charAt(i); 
-		    
-		    if (Character.isLetter(ch)){
-		        if(ch=='a'||ch=='e'||ch=='i'||ch=='o'|| ch=='u'||ch=='A'||ch=='E'||ch=='I'||ch=='O'||ch=='U'){
-		        x+=1;
-		    
-		    
-		    }
-		    else{
-		        b+=1;
-		    }}
-		    
-		}System.out.println("Vowels: "+ x + "\n" +"Consonants: " +b);
+		public static void main (String[] args) throws java.lang.Exception
+		{
+			Scanner sc=new Scanner(System.in);// your code goes here
+			String a=sc.nextLine();
+			int x=0,b=0;
+			for(int i=0;i<a.length();i++){
+			     char ch = a.charAt(i); 
+			    
+			    if (Character.isLetter(ch)){
+			        if(ch=='a'||ch=='e'||ch=='i'||ch=='o'|| ch=='u'||ch=='A'||ch=='E'||ch=='I'||ch=='O'||ch=='U'){
+			        x+=1;
+			    
+			    
+			    }
+			    else{
+			        b+=1;
+			    }}
+			    
+			}System.out.println("Vowels: "+ x + "\n" +"Consonants: " +b);
+		}
 	}
-}
 ```
 Sample Input
 i have67
@@ -249,35 +249,35 @@ Your Output
 Vowels: 3
 Consonants: 2
 ```
-import java.util.*;
-//@nd largest unique value
-
-class Codechef
-{
-	public static void main (String[] args) throws java.lang.Exception
+	import java.util.*;
+	//@nd largest unique value
+	
+	class Codechef
 	{
-		Scanner sc=new Scanner(System.in);// your code goes here
-		int n=sc.nextInt();
-		int a[]=new int[n];
-		for(int i=0;i<n;i++){
-		    a[i]=sc.nextInt();
+		public static void main (String[] args) throws java.lang.Exception
+		{
+			Scanner sc=new Scanner(System.in);// your code goes here
+			int n=sc.nextInt();
+			int a[]=new int[n];
+			for(int i=0;i<n;i++){
+			    a[i]=sc.nextInt();
+			}
+			int x = Integer.MIN_VALUE; // Tracks highest
+			int y = Integer.MIN_VALUE;
+			for(int i=0;i<n;i++){
+			    if(x<a[i]){
+			        y=x;
+			        x=a[i];
+			        
+			    }
+			    else if(x>a[i] && a[i]>y){
+			        y=a[i];
+			    }
+			}System.out.println(y);
+	// 		Arrays.sort(a);
+	// 		System.out.println(a[a.length-2]);
 		}
-		int x = Integer.MIN_VALUE; // Tracks highest
-		int y = Integer.MIN_VALUE;
-		for(int i=0;i<n;i++){
-		    if(x<a[i]){
-		        y=x;
-		        x=a[i];
-		        
-		    }
-		    else if(x>a[i] && a[i]>y){
-		        y=a[i];
-		    }
-		}System.out.println(y);
-// 		Arrays.sort(a);
-// 		System.out.println(a[a.length-2]);
 	}
-}
 ```
 Sample Input
 4 4 2 6 6
@@ -288,28 +288,28 @@ count the footwera with given type and find the  second highest price of a footw
 ```
 import java.util.*;
 
-class Footwear {
-    private int id;
-    private String name;
-    private String type;
-    private double price;
-    
-    Footwear(int id, String name, String type, double price) {
-        this.id = id;
-        this.name = name;
-        this.type = type;
-        this.price = price;
-    }
-    
-    public int getId() { return id; }
-    public String getName() { return name; }
-    public String getType() { return type; }
-    public double getPrice() { return price; }
-}
-
-class sol {
-    public static void main(String ars[]) {
-        Scanner sc = new Scanner(System.in);
+	class Footwear {
+	    private int id;
+	    private String name;
+	    private String type;
+	    private double price;
+	    
+	    Footwear(int id, String name, String type, double price) {
+	        this.id = id;
+	        this.name = name;
+	        this.type = type;
+	        this.price = price;
+	    }
+	    
+	    public int getId() { return id; }
+	    public String getName() { return name; }
+	    public String getType() { return type; }
+	    public double getPrice() { return price; }
+	}
+	
+	class sol {
+	    public static void main(String ars[]) {
+	        Scanner sc = new Scanner(System.in);
         
         // Fix 1: Hardcoded array to size 4 as requested by the specific question
         Footwear[] foot = new Footwear[4];
@@ -367,7 +367,7 @@ class sol {
         }
         return secondHighest; // Returns null if less than two items exist for that brand
     }
-}
+	}
 ```
 Sample Input
 1
@@ -392,85 +392,85 @@ Your Output
 2
 3
 ```
-import java.util.*
-class Footwear{
-    private int id;
-    private String name;
-    private String type;
-    private double price;
-    Footwear(int id,String name,String type,double price){
-        this.id=id;
-        this.name=name;
-        this.type=type;
-        this.price=price;
-    }
-    public int getId(){
-        return id;
-    }
-    public String getName(){
-        return name;
-    }
-    public String getType(){
-        return type;
-        
-    }
-    public double getPrice(){
-        return price;
-    }
-}
-class sol{
-    public static void main(String ars[]){
-        Scanner sc=new Scanner(System.in);
-        // int n=sc.nextInt();sc.nextLine();
-        Footwear[] foot=new Footwear[4];
-        for(int i=0;i<4;i++){
-            int id=sc.nextInt();sc.nextLine();
-            String name=sc.nextLine().trim();
-            String type=sc.nextLine();
-            double price=sc.nextDouble();sc.nextLine();
-            foot[i]=new Footwear(id,name,type,price);
-        }
-        String a=sc.nextLine();
-        String b=sc.nextLine();
-        int c=getCountByType(foot,a);
-        if(c==0){
-            System.out.println("No matches found");
-        }
-        else{
-          
-            System.out.println(c);
-        }
-        double m=secondHighestByBrand(foot,b);
-        if(m==Integer.MIN_VALUE){
-            System.out.println("no second highest found");
-        }
-        else{
-            System.out.println(m);
-        }
-    }
-    public static int getCountByType(Footwear[] foot,String type){
-        int c=0;
-        for(Footwear i:foot){
-            if(type.equalsIgnoreCase(i.getType())){
-                c+=1;
-            }
-        }return c;
-    }
-    public static double secondHighestByBrand(Footwear[] foot,String brand){
-        double f=0,s=0;
-        for(Footwear i:foot){
-            if(brand.equalsIgnoreCase(i.getName())){
-                if(f<i.getPrice()){
-                    s=f;
-                    f=i.getPrice();
-                    }
-                else if(i.getPrice()<f && i.getPrice()>s){
-                    s=i.getPrice();
-                }
-            }
-        }return s;
-    }
-}
+
+	   import java.util.*
+	class Footwear{
+	    private int id;
+	    private String name;
+	    private String type;
+	    private double price;
+	    Footwear(int id,String name,String type,double price){
+	        this.id=id;
+	        this.name=name;
+	        this.type=type;
+	        this.price=price;
+	    }
+	    public int getId(){
+	        return id;
+	    }
+	    public String getName(){
+	        return name;
+	    } public String getType(){
+	        return type;
+	        
+	    }
+	    public double getPrice(){
+	        return price;
+	    }
+	}
+	class sol{
+	    public static void main(String ars[]){
+	        Scanner sc=new Scanner(System.in);
+	        // int n=sc.nextInt();sc.nextLine();
+	        Footwear[] foot=new Footwear[4];
+	        for(int i=0;i<4;i++){
+	            int id=sc.nextInt();sc.nextLine();
+	            String name=sc.nextLine().trim();
+	            String type=sc.nextLine();
+	            double price=sc.nextDouble();sc.nextLine();
+	            foot[i]=new Footwear(id,name,type,price);
+	        }
+	        String a=sc.nextLine();
+	        String b=sc.nextLine();
+	        int c=getCountByType(foot,a);
+	        if(c==0){
+	            System.out.println("No matches found");
+	        }
+	        else{
+	          
+	            System.out.println(c);
+	        }
+	        double m=secondHighestByBrand(foot,b);
+	        if(m==Integer.MIN_VALUE){
+	            System.out.println("no second highest found");
+	        }
+	        else{
+	            System.out.println(m);
+	        }
+	    }
+	    public static int getCountByType(Footwear[] foot,String type){
+	        int c=0;
+	        for(Footwear i:foot){
+	            if(type.equalsIgnoreCase(i.getType())){
+	                c+=1;
+	            }
+	        }return c;
+	    }
+	    public static double secondHighestByBrand(Footwear[] foot,String brand){
+	        double f=0,s=0;
+	        for(Footwear i:foot){
+	            if(brand.equalsIgnoreCase(i.getName())){
+	                if(f<i.getPrice()){
+	                    s=f;
+	                    f=i.getPrice();
+	                    }
+	                else if(i.getPrice()<f && i.getPrice()>s){
+	                    s=i.getPrice();
+	                }
+	            }
+	        }return s;
+	    }
+	}
 
 ```
 Sample Input
@@ -498,16 +498,16 @@ Your Output
 
 **table program**
 ```
-import java.util.*;
-class sol{
-    public static void main(String args[]){
-        Scanner sc=new Scanner(System.in);
-        int n=sc.nextInt();
-        for(int i=1;i<11;i++){
-            System.out.println(n+" * "+i +" = "+n*i);
-        }
-    }
-}
+	import java.util.*;
+	class sol{
+	    public static void main(String args[]){
+	        Scanner sc=new Scanner(System.in);
+	        int n=sc.nextInt();
+	        for(int i=1;i<11;i++){
+	            System.out.println(n+" * "+i +" = "+n*i);
+	        }
+	    }
+	}
 ```
 Sample Input
 4
@@ -524,21 +524,21 @@ Your Output
 4 * 10 = 40
 **Character count**
 ```
-import java.util.*;
-class sol{
-    public static void main(String args[]){
-        Scanner sc=new Scanner(System.in);
-        String s=sc.nextLine();
-        char c=sc.nextLine().charAt(0);
-        int a=0;
-        for(int i=0;i<s.length();i++){
-            if(c==s.charAt(i)){
-                a++;
-            }
-        }
-        System.out.println(a);
-    }
-}
+	import java.util.*;
+	class sol{
+	    public static void main(String args[]){
+	        Scanner sc=new Scanner(System.in);
+	        String s=sc.nextLine();
+	        char c=sc.nextLine().charAt(0);
+	        int a=0;
+	        for(int i=0;i<s.length();i++){
+	            if(c==s.charAt(i)){
+	                a++;
+	            }
+	        }
+	        System.out.println(a);
+	    }
+	}
 ```
 Sample Input
 aakakaa
@@ -547,21 +547,21 @@ Your Output
 2
 **print non-repeating characters**
 ```
-import java.util.*;
-class sol{
-    public static void main(String args[]){
-        Scanner sc=new Scanner(System.in);
-        String s=sc.nextLine();
-        String k="";
-        int n=s.length();
-        for(int i=0;i<n;i++){
-            if(s.indexOf(s.charAt(i))+n-s.lastIndexOf(s.charAt(i))==n){
-                k+=s.charAt(i);
-            }
-        }System.out.println(k);
-        
-    }
-}
+	import java.util.*;
+	class sol{
+	    public static void main(String args[]){
+	        Scanner sc=new Scanner(System.in);
+	        String s=sc.nextLine();
+	        String k="";
+	        int n=s.length();
+	        for(int i=0;i<n;i++){
+	            if(s.indexOf(s.charAt(i))+n-s.lastIndexOf(s.charAt(i))==n){
+	                k+=s.charAt(i);
+	            }
+	        }System.out.println(k);
+	        
+	    }
+	}
 ```
 Sample Input
 abaccdftdf
@@ -569,29 +569,29 @@ Your Output
 bt
 **print string without repeating characters**
 ```
-import java.util.*;
-class Unique_Character {
-    public static void main(String[] args) {
-        Scanner scan=new Scanner(System.in);
-        String str=scan.nextLine();
-        str=str.toLowerCase();
-        int[] freq=new int[256];
-        String ans="";
-        for(int i=0;i<str.length();i++){
-            char ch=str.charAt(i);
-            if(freq[ch]==0){
-                ans+=ch;
-            }
-            freq[ch]++;
-        }
-        // int a='A';
-        // System.out.println(a);
-        // for(int i=0;i<256;i++){
-        //   if(freq[i]>0){ System.out.println(freq[i]+" "+i+" ");}
-        // }
-        System.out.println(ans);
-    }
-}
+	import java.util.*;
+	class Unique_Character {
+	    public static void main(String[] args) {
+	        Scanner scan=new Scanner(System.in);
+	        String str=scan.nextLine();
+	        str=str.toLowerCase();
+	        int[] freq=new int[256];
+	        String ans="";
+	        for(int i=0;i<str.length();i++){
+	            char ch=str.charAt(i);
+	            if(freq[ch]==0){
+	                ans+=ch;
+	            }
+	            freq[ch]++;
+	        }
+	        // int a='A';
+	        // System.out.println(a);
+	        // for(int i=0;i<256;i++){
+	        //   if(freq[i]>0){ System.out.println(freq[i]+" "+i+" ");}
+	        // }
+	        System.out.println(ans);
+	    }
+	}
 ```
 Sample Input
 abaccdftdf
@@ -599,26 +599,26 @@ Your Output
 abcdft
 **sum_Num**
 ```
-import java.util.*;
-class sol{
-    public static void main(String args[]){
-        Scanner sc=new Scanner(System.in);
-        String s=sc.nextLine();
-        int k=0;
-        int a=0;
-        for(int i=0;i<s.length();i++){
-            if(Character.isDigit(s.charAt(i))){
-                a=a*10+Integer.parseInt(String.valueOf(s.charAt(i)));
-            }
-            else{
-                k+=a;
-                a=0;
-            }
-        }k+=a;
-        System.out.println(k);
-        
-    }
-}
+	import java.util.*;
+	class sol{
+	    public static void main(String args[]){
+	        Scanner sc=new Scanner(System.in);
+	        String s=sc.nextLine();
+	        int k=0;
+	        int a=0;
+	        for(int i=0;i<s.length();i++){
+	            if(Character.isDigit(s.charAt(i))){
+	                a=a*10+Integer.parseInt(String.valueOf(s.charAt(i)));
+	            }
+	            else{
+	                k+=a;
+	                a=0;
+	            }
+	        }k+=a;
+	        System.out.println(k);
+	        
+	    }
+	}
 ```
 Sample Input
 109abn*19 2 hj1
