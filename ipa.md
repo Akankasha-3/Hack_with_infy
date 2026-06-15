@@ -496,3 +496,132 @@ Your Output
 2
 506.3
 
+**table program**
+```
+import java.util.*;
+class sol{
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        for(int i=1;i<11;i++){
+            System.out.println(n+" * "+i +" = "+n*i);
+        }
+    }
+}
+```
+Sample Input
+4
+Your Output
+4 * 1 = 4
+4 * 2 = 8
+4 * 3 = 12
+4 * 4 = 16
+4 * 5 = 20
+4 * 6 = 24
+4 * 7 = 28
+4 * 8 = 32
+4 * 9 = 36
+4 * 10 = 40
+**Character count**
+```
+import java.util.*;
+class sol{
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        String s=sc.nextLine();
+        char c=sc.nextLine().charAt(0);
+        int a=0;
+        for(int i=0;i<s.length();i++){
+            if(c==s.charAt(i)){
+                a++;
+            }
+        }
+        System.out.println(a);
+    }
+}
+```
+Sample Input
+aakakaa
+k
+Your Output
+2
+**print non-repeating characters**
+```
+import java.util.*;
+class sol{
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        String s=sc.nextLine();
+        String k="";
+        int n=s.length();
+        for(int i=0;i<n;i++){
+            if(s.indexOf(s.charAt(i))+n-s.lastIndexOf(s.charAt(i))==n){
+                k+=s.charAt(i);
+            }
+        }System.out.println(k);
+        
+    }
+}
+```
+Sample Input
+abaccdftdf
+Your Output
+bt
+**print string without repeating characters**
+```
+import java.util.*;
+class Unique_Character {
+    public static void main(String[] args) {
+        Scanner scan=new Scanner(System.in);
+        String str=scan.nextLine();
+        str=str.toLowerCase();
+        int[] freq=new int[256];
+        String ans="";
+        for(int i=0;i<str.length();i++){
+            char ch=str.charAt(i);
+            if(freq[ch]==0){
+                ans+=ch;
+            }
+            freq[ch]++;
+        }
+        // int a='A';
+        // System.out.println(a);
+        // for(int i=0;i<256;i++){
+        //   if(freq[i]>0){ System.out.println(freq[i]+" "+i+" ");}
+        // }
+        System.out.println(ans);
+    }
+}
+```
+Sample Input
+abaccdftdf
+Your Output
+abcdft
+**sum_Num**
+```
+import java.util.*;
+class sol{
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        String s=sc.nextLine();
+        int k=0;
+        int a=0;
+        for(int i=0;i<s.length();i++){
+            if(Character.isDigit(s.charAt(i))){
+                a=a*10+Integer.parseInt(String.valueOf(s.charAt(i)));
+            }
+            else{
+                k+=a;
+                a=0;
+            }
+        }k+=a;
+        System.out.println(k);
+        
+    }
+}
+```
+Sample Input
+109abn*19 2 hj1
+Your Output
+131
+
