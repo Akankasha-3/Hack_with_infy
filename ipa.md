@@ -625,3 +625,92 @@ Sample Input
 Your Output
 131
 
+**sorting objects**
+```
+	import java.util.*;
+	class Codechef
+	{
+		public static void main (String[] args) throws java.lang.Exception
+		{
+			My[] a=new My[]{new My(3,"KA",9.8),new My(1,"Ba",10),new My(2,"Ak",27)};
+			//My[] a=new My[]; this also works
+	// 		a[0]=new My(3,"KA",9.8);
+	// 		a[1]=new My(1,"Ba",10);
+	// 		a[2]=new My(2,"Ak",27);
+			System.out.println("sort by name");
+			Arrays.sort(a,Comparator.comparing(My::getName));
+			for(My i:a){
+			    System.out.println(i.getId()+" "+i.getName()+" "+i.getPrice());
+			}System.out.println("Sort by price");
+			Arrays.sort(a,Comparator.comparing(My::getPrice));
+			for(My i:a){
+			    System.out.println(i.getId()+" "+i.getName()+" "+i.getPrice());
+			}System.out.println("sort by id in reverse order");
+			Arrays.sort(a,Comparator.comparing(My::getId).reversed());
+			for(My i:a){
+			    System.out.println(i.getId()+" "+i.getName()+" "+i.getPrice());
+			}
+		}
+	}
+	class My{
+	    int id;String name;double price;
+	    My(int id,String name,double pri){
+	        this.id=id;
+	        this.name=name;
+	        this.price=pri;
+	    }
+	    public String getName(){return name;}
+	    public int getId(){return id;}
+	    public double getPrice(){return price;}
+	}
+```
+import java.util.*;
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		My[] a=new My[]{new My(3,"KA",9.8),new My(1,"Ba",10),new My(2,"Ak",27)};
+		//My[] a=new My[]; this also works
+// 		a[0]=new My(3,"KA",9.8);
+// 		a[1]=new My(1,"Ba",10);
+// 		a[2]=new My(2,"Ak",27);
+		System.out.println("sort by name");
+		Arrays.sort(a,Comparator.comparing(My::getName));
+		for(My i:a){
+		    System.out.println(i.getId()+" "+i.getName()+" "+i.getPrice());
+		}System.out.println("Sort by price");
+		Arrays.sort(a,Comparator.comparing(My::getPrice));
+		for(My i:a){
+		    System.out.println(i.getId()+" "+i.getName()+" "+i.getPrice());
+		}System.out.println("sort by id in reverse order");
+		Arrays.sort(a,Comparator.comparing(My::getId).reversed());
+		for(My i:a){
+		    System.out.println(i.getId()+" "+i.getName()+" "+i.getPrice());
+		}
+	}
+}
+class My{
+    int id;String name;double price;
+    My(int id,String name,double pri){
+        this.id=id;
+        this.name=name;
+        this.price=pri;
+    }
+    public String getName(){return name;}
+    public int getId(){return id;}
+    public double getPrice(){return price;}
+}
+```
+output
+sort by name
+2 Ak 27.0
+1 Ba 10.0
+3 KA 9.8
+Sort by price
+3 KA 9.8
+1 Ba 10.0
+2 Ak 27.0
+sort by id in reverse order
+3 KA 9.8
+2 Ak 27.0
+1 Ba 10.0
