@@ -139,3 +139,41 @@ public class StringToArray {
     }
 }
 ```
+```
+import java.util.*;
+class Solution{
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        String s=sc.nextLine();
+        int l=0,u=0;
+        for(int i=0;i<s.length();i++){
+            if('a'<=s.charAt(i) && s.charAt(i)<='z'){
+                l+=1;
+            }
+            else if(Character.isUpperCase(s.charAt(i))){
+                u++;
+            }
+        }
+        System.out.println("LowerCase: "+l+"\n"+"UpperCase:"+u);
+    }
+}
+```
+```
+import java.util.*;
+//count of strings starting with vowel
+class Solution{
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        String s=sc.nextLine();
+        String[] a=s.split(" ");
+        int l=0;
+        for(int i=0;i<a.length;i++){
+            char c=a[i].charAt(0); // char c=Character.toLowerCase(a[i].charAt(0));
+            c=Character.toLowerCase(c);
+            if(c=='a' || c=='e'||c=='i'||c=='o'||c=='u'){l++;}
+        }
+        if(l==0){System.out.println("No String found");}
+        else System.out.println(l);
+    }
+}
+```
