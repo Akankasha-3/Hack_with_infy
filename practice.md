@@ -177,3 +177,29 @@ class Solution{
     }
 }
 ```
+```
+//program to count no.of consonants in  odd indices
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+	Scanner sc=new Scanner(System.in);
+	String s=sc.nextLine();
+	int k=0;
+	String a="aeiouAEIOU";
+	for(int i=0;i<s.length();i++){
+	    if(i%2==0 && !a.contains(String.valueOf(s.charAt(i)))){
+	        k++;
+	    }
+	}System.out.println(k);
+	}
+}
+```
+Sample Input
+abcdh
+Your Output
+2
