@@ -96,7 +96,7 @@ def count_zeros_binary_search(row):
     low, high = 0, len(row) - 1
     while low <= high:
         mid = (low + high) // 2
-        if row[mid] == 0:
+        if row[mid] != 0:
             high = mid - 1
         else:
             low = mid + 1
@@ -105,14 +105,26 @@ def count_zeros_binary_search(row):
 a, b = map(int, input().split())
 max_zeros = -1
 row_index = -1
-for i in range(b):
+for i in range(a):
     row = list(map(int, input().split()))
     zero_count = count_zeros_binary_search(row)
-    if a - zero_count > max_zeros:
-        max_zeros = a - zero_count
+    print(zero_count)
+    if zero_count > max_zeros:
+        max_zeros = zero_count
         row_index = i
 print(row_index)
 ```
+Sample Input
+3 4
+0 0 1 1
+0 0 0 1
+0 0 0 1
+Your Output
+2
+3
+3
+1
+
 
 #### Method-3: Optimal - O(n + m)
 
