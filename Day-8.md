@@ -12,12 +12,11 @@ dp = [0] * (k + 1)
 dp[0] = 1
 for i in range(1, k + 1):
     for j in l:
-        if i - j > 0:
+        if i - j > 0 and dp[i-j]==1:
             dp[i] = dp[i - j]
         elif i == j:
             dp[i] = 1
-        else:
-            dp[i] = dp[j]
+        
     print(dp)
 print('Yes' if dp[-1] != 0 else 'no')
 ```
